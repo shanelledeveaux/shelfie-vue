@@ -11,6 +11,8 @@ massive(process.env.CONNECTION_STRING).then(dbInstance =>
   app.set("db", dbInstance)
 );
 
+app.post("/api/product", mc.addProduct);
+
 const port = 3001;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
