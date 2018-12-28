@@ -1,20 +1,16 @@
 <template>
-  <div class="dashboard">Dash</div>
-  <!-- <Product/> -->
+  <div class="dashboard">Dash
+    <Product/>
+  </div>
 </template>
 
 <script>
 import Product from "./Product";
 
 export default {
-  name: "Product",
+  name: "Dashboard",
   components: {
     Product
-  },
-  data() {
-    return {
-      msg: "Product"
-    };
   }
 };
 </script>
