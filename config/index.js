@@ -6,15 +6,6 @@ const path = require("path");
 
 module.exports = {
   dev: {
-    proxyTable: {
-      "**": {
-        target: "http://localhost:3001/",
-        filter: function(pathname, req) {
-          return pathname.match("^/api");
-        }
-      }
-    },
-
     // Paths
     assetsSubDirectory: "static",
     assetsPublicPath: "/",

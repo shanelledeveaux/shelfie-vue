@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 
 export default {
@@ -25,12 +26,14 @@ export default {
     cancel: function(event) {
       (this.name = ""), (this.price = ""), (this.imageurl = "");
     },
-    submit: function(event) {
-      axios.post("/api/product", {
-        name: this.name,
-        price: this.price,
-        imageurl: this.imageurl
-      });
+    submit() {
+      axios
+        .post("http://localhost:3001/api/product", {
+          name: this.name,
+          price: this.price,
+          imageurl: this.imageurl
+        })
+        .then(res => console.log(res));
     }
   }
 };
