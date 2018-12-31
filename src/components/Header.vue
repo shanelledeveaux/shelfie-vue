@@ -1,5 +1,5 @@
 <template>
-  <div class="header">Header</div>
+  <div class="header">Shelfie</div>
 </template>
 
 <script>
@@ -14,9 +14,9 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
+.header {
+  height: 5vh;
+  box-shadow: 10px 3px 10px 5px rgba(143, 143, 143, 0.2);
+  margin-bottom: 5vh;
 }
 </style>
