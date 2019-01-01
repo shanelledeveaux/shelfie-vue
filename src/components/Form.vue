@@ -71,6 +71,7 @@ export default {
 <style>
 .form-container {
   width: 40vw;
+  height: 80vh;
   box-shadow: 1px 1px 20px 3px rgba(143, 143, 143, 0.281);
   padding: 2vw;
 }

@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Header/>
-    <Dashboard/>
-    <Form/>
+    <div class="body">
+      <Form/>
+      <Dashboard :info="info"/>
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 import Dashboard from "./components/Dashboard";
 import Form from "./components/Form";
 import Header from "./components/Header";
+import axios from "axios";
 
 export default {
   name: "App",
@@ -17,6 +20,16 @@ export default {
     Dashboard,
     Form,
     Header
+  },
+  info: {},
+  data: () => ({
+    info: {}
+  }),
+  mounted() {
+    axios
+      .get("http://localhost:3001/api/product")
+      .then(response => (this.info = response.data));
+    console.log(this.info);
   }
 };
 </script>
@@ -28,5 +41,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   height: 100vh;
+}
+
+.body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="dashboard">Dash
-    <Product/>
+  <div class="dashboard">
+    <Product v-for="product in info" v-bind:info="product" v-bind:key="product.id"></Product>
   </div>
 </template>
 
@@ -11,7 +11,11 @@ export default {
   name: "Dashboard",
   components: {
     Product
-  }
+  },
+  props: ["info"]
+  // mounted() {
+  //   console.log(this.info);
+  // }
 };
 </script>
 
