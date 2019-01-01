@@ -16,7 +16,7 @@ export default {
 <style>
 .header {
   height: 5vh;
-  box-shadow: 10px 3px 10px 5px rgba(143, 143, 143, 0.2);
+  box-shadow: 1px 1px 20px 3px rgba(143, 143, 143, 0.281);
   margin-bottom: 5vh;
 }
 </style>
