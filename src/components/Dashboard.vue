@@ -1,7 +1,12 @@
 <template>
   <div class="dashboard">
     <div class="product-holder">
-      <Product v-for="product in info" v-bind:info="product" v-bind:key="product.id"></Product>
+      <Product
+        v-for="product in info"
+        v-bind:info="product"
+        v-bind:key="product.id"
+        :getProducts="getProducts"
+      ></Product>
     </div>
   </div>
 </template>
@@ -14,7 +19,7 @@ export default {
   components: {
     Product
   },
-  props: ["info"]
+  props: ["info", "getProducts"]
   // mounted() {
   //   console.log(this.info);
   // }

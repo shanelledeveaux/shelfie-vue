@@ -3,7 +3,7 @@
     <Header/>
     <div class="body">
       <Form/>
-      <Dashboard :info="info"/>
+      <Dashboard :info="info" :getProducts="getProducts"/>
     </div>
   </div>
 </template>
@@ -25,11 +25,16 @@ export default {
   data: () => ({
     info: {}
   }),
-  mounted() {
-    axios
-      .get("http://localhost:3001/api/product")
-      .then(response => (this.info = response.data));
-    console.log(this.info);
+  methods: {
+    getProducts() {
+      axios
+        .get("http://localhost:3001/api/product")
+        .then(response => (this.info = response.data));
+      console.log(this.info);
+    }
+  },
+  beforeMount() {
+    this.getProducts();
   }
 };
 </script>
