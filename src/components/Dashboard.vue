@@ -1,6 +1,8 @@
 <template>
   <div class="dashboard">
-    <Product v-for="product in info" v-bind:info="product" v-bind:key="product.id"></Product>
+    <div class="product-holder">
+      <Product v-for="product in info" v-bind:info="product" v-bind:key="product.id"></Product>
+    </div>
   </div>
 </template>
 
@@ -20,4 +22,10 @@ export default {
 </script>
 
 <style>
+.product-holder {
+  height: 80vh;
+  width: 100%;
+  align-items: center;
+  overflow: scroll;
+}
 </style>
